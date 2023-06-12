@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     getCars();
-  }, []);
+  });
 
   return (
     <div className="App">
