@@ -1,0 +1,9 @@
+.bulkButton-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: flex-end;
+}
+
+.bulkButton-container button {
+  width: 200px;
+}

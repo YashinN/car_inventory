@@ -1,0 +1,28 @@
+#root {
+  min-height: 100vh;
+}
+
+.edit-button-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #2c3e50;
+}
+
+.edit-button-container button {
+  width: 50%;
+}
+
+.details-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.details-wrapper table {
+  flex-grow: 1;
+}
+
+.rt {
+  flex-grow: auto;
+}
