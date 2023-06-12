@@ -9,9 +9,13 @@ const CarDetails = (props) => {
   // makes delete request to remove record.
   const deleteRequest = async () => {
     // makes delete request with id of item to delete in params.
-    const response = await fetch("/api/cars/" + props.car._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars/" +
+        props.car._id,
+      {
+        method: "DELETE",
+      }
+    );
     // gets update car records.
     const data = await response.json();
     // sets updated car records.

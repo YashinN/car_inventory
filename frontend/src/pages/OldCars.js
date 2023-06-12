@@ -8,7 +8,9 @@ const OldCars = (props) => {
 
   // get request to fetch records from db.
   const getOldCars = async () => {
-    const response = await fetch("api/cars/old");
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars/old"
+    );
     const data = await response.json();
 
     // sets state to display old car records.

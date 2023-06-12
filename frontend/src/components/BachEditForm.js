@@ -20,17 +20,20 @@ const BachEditForm = (props) => {
     const idArray = props.editIds.map((id) => id.id);
 
     // makes Patch req to updated data.
-    const response = await fetch("/api/cars/many", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // body sends ids, property and value to edit.
-      body: JSON.stringify({
-        ids: idArray,
-        fields: { [currentProperty]: editedValue },
-      }),
-    });
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars/many",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body sends ids, property and value to edit.
+        body: JSON.stringify({
+          ids: idArray,
+          fields: { [currentProperty]: editedValue },
+        }),
+      }
+    );
 
     const data = await response.json();
     // checks if empty fields were send to db.

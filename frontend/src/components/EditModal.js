@@ -36,14 +36,18 @@ const EditModal = (props) => {
 
   // makes request to update a single car record by id.
   const updateCar = async () => {
-    const response = await fetch("/api/cars/" + props.car._id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // sends the fields to update.
-      body: JSON.stringify({ make, model, owner, registration, address }),
-    });
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars/" +
+        props.car._id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // sends the fields to update.
+        body: JSON.stringify({ make, model, owner, registration, address }),
+      }
+    );
 
     // recevies updated records.
     const data = await response.json();

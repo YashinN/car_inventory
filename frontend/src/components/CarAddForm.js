@@ -33,14 +33,17 @@ const CarAddForm = (props) => {
     const newCar = { model, make, owner, registration, address };
 
     // makes POST request to db.
-    const response = await fetch("/api/cars/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // send new car record details.
-      body: JSON.stringify(newCar),
-    });
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // send new car record details.
+        body: JSON.stringify(newCar),
+      }
+    );
 
     // receives all updated car record.
     const data = await response.json();

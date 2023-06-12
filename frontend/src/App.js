@@ -10,7 +10,9 @@ function App() {
   const [cars, setCars] = useState([]);
 
   const getCars = async () => {
-    const response = await fetch("/api/cars");
+    const response = await fetch(
+      "https://carinventory-production.up.railway.app/api/cars"
+    );
     const data = await response.json();
     setCars(data);
   };
