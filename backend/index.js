@@ -20,16 +20,16 @@ app.use(express.json());
 app.use("/api/cars", carsRoutes);
 
 // Connect to db
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(process.env.PORT, () => {
-//       console.log(`server running on port ${process.env.PORT}`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`server running on port ${process.env.PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // Export the Express API
 module.exports = app;
