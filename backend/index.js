@@ -8,10 +8,6 @@ const carsRoutes = require("./routes/carsRoutes");
 // Create Express App
 const app = express();
 
-app.listen(PORT, () => {
-  console.log(`API listening on PORT ${PORT} `);
-});
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -30,6 +26,3 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-// Export the Express API
-module.exports = app;
