@@ -5,8 +5,14 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const carsRoutes = require("./routes/carsRoutes");
 
+const PORT = process.env.PORT || 4000;
+
 // Create Express App
 const app = express();
+
+app.listen(PORT, () => {
+  console.log("listening");
+});
 
 // Middleware
 app.use(cors());
