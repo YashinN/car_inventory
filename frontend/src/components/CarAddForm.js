@@ -34,7 +34,7 @@ const CarAddForm = (props) => {
 
     // makes POST request to db.
     const response = await fetch(
-      "https://car-inventory-dflxh6inm-yashinn.vercel.app/api/cars/",
+      "https://carinventory-production.up.railway.app/api/cars/old",
       {
         method: "POST",
         headers: {
