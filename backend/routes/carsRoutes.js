@@ -4,11 +4,11 @@ const router = express.Router();
 
 // Get all cars
 
-// router.get("/", carsController.getCars);
+router.get("/", carsController.getCars);
 
 // Create Car
 
-router.get("/", carsController.createCar);
+router.post("/", carsController.createCar);
 
 // Delete Car
 
