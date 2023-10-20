@@ -10,10 +10,6 @@ const PORT = process.env.PORT || 4000;
 // Create Express App
 const app = express();
 
-app.listen(PORT, () => {
-  console.log("listening");
-});
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -21,18 +17,14 @@ app.use(express.json());
 // Routes
 app.use("/api/cars", carsRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 // Connect to db
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(process.env.PORT, () => {
-//       console.log(`server running on port ${process.env.PORT}`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`server running on port ${process.env.PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
