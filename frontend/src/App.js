@@ -11,7 +11,7 @@ function App() {
 
   const getCars = async () => {
     const response = await fetch(
-      "https://carinventory-production.up.railway.app/api/cars"
+      "https://car-inventory-dflxh6inm-yashinn.vercel.app/api/cars/"
     );
     const data = await response.json();
     setCars(data);
