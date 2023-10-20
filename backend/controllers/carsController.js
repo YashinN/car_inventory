@@ -23,27 +23,29 @@ const getCars = async (req, res) => {
 
 // create new car, adds a new car record to database.
 const createCar = async (req, res) => {
-  // stores all empty fields received in body.
-  let emptyFields = getEmptyFields(req.body);
+  res.json("Route working");
 
-  // checks for empty fields and sends error along with the empty fields.
-  if (emptyFields.length > 0) {
-    return res
-      .status(400)
-      .json({ error: "Please fill in all fields!", emptyFields });
-  }
+  // // stores all empty fields received in body.
+  // let emptyFields = getEmptyFields(req.body);
 
-  // adds new car record to database.
-  try {
-    // creates new car in database.
-    const newCar = await Car.create({ ...req.body });
-    // gets all cars from db.
-    const getAll = await Car.find({});
-    // sends status and updated car records from db.
-    res.status(200).json(getAll);
-  } catch (error) {
-    console.log(error);
-  }
+  // // checks for empty fields and sends error along with the empty fields.
+  // if (emptyFields.length > 0) {
+  //   return res
+  //     .status(400)
+  //     .json({ error: "Please fill in all fields!", emptyFields });
+  // }
+
+  // // adds new car record to database.
+  // try {
+  //   // creates new car in database.
+  //   const newCar = await Car.create({ ...req.body });
+  //   // gets all cars from db.
+  //   const getAll = await Car.find({});
+  //   // sends status and updated car records from db.
+  //   res.status(200).json(getAll);
+  // } catch (error) {
+  //   console.log(error);
+  // }
 };
 
 // delete a new car, removes car record from db.
